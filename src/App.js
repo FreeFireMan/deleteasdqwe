@@ -7,6 +7,7 @@ import {
 	Link
 } from 'react-router-dom';
 import AllUsers from './AllUsers';
+import FullUser from "./FullUser";
 
 class App extends Component {
 	render() {
@@ -19,9 +20,8 @@ class App extends Component {
 					</Link>
 
 					<Switch>
-						<Route path={'/users'} >
-							<AllUsers/>
-						</Route>
+						<Route path={'/users'} exact component={AllUsers}/>
+						<Route path={'/users/:id'} component={FullUser}/>
 					</Switch>
 				</Router>
 

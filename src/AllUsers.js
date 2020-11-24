@@ -31,13 +31,13 @@ class AllUsers extends Component {
 					users.map(value => (<User value={value} key={value.id}/>))
 				}
 
-				<Switch>
-					<Route path={'/users/:id'}>
-						<FullUser/>
+				{/*<Switch>*/}
+				{/*	<Route path={'/users/:id'}>*/}
+				{/*		<FullUser/>*/}
 
-					</Route>
+				{/*	</Route>*/}
 
-				</Switch>
+				{/*</Switch>*/}
 
 			</div>
 		);

@@ -23,28 +23,32 @@ class FullUser extends Component {
 
 	}
 
-	componentDidUpdate(prevProps, prevState, snapshot) {
-		let {match: {params: {id}}} = this.props;
-		fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-			.then(value => value.json())
-			.then(value => {
-				console.log(value);
-				this.setState({user: value});
-			});
-
-	}
+	// componentDidUpdate(prevProps, prevState, snapshot) {
+	// 	let {match: {params: {id}}} = this.props;
+	// 	fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+	// 		.then(value => value.json())
+	// 		.then(value => {
+	// 			console.log(value);
+	// 			this.setState({user: value});
+	// 		});
+	//
+	// }
 
 	render() {
 
 		console.log('render user');
-
+		const {user} = this.state;
 		return (
 			<div>
-				full
+				{
+					user
+						? <div>{JSON.stringify(user)}</div>
+							: "LOADING"
+				}
 
 			</div>
 		);
 	}
 }
 
-export default withRouter(FullUser);
+export default FullUser;
